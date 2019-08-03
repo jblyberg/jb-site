@@ -1,13 +1,21 @@
 <template>
-  <q-page class="flex flex-center">
-    <img alt="Quasar logo" src="~assets/quasar-logo-full.svg" />
+  <q-page>
+    <div class="row">
+      <div class="divider-blue col shadow-3"></div>
+    </div>
   </q-page>
 </template>
-
-<style></style>
 
 <script>
 export default {
   name: 'PageIndex',
 };
 </script>
+
+<style lang="scss" scoped>
+.divider-blue {
+  background-color: steelblue;
+  min-height: 50px;
+  border-top: 2px solid slateblue;
+}
+</style>
