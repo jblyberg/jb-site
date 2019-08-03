@@ -5,7 +5,7 @@ const routes = [
     children: [
       {
         path: '',
-        component: () => import('pages/Index.vue'),
+        component: () => import('pages/PageFront.vue'),
       },
       {
         path: '/card-generator',
