@@ -4,18 +4,22 @@ const routes = [
     component: () => import('layouts/DefaultLayout.vue'),
     children: [
       {
+        name: 'front',
         path: '',
         component: () => import('pages/PageFront.vue'),
       },
       {
+        name: 'ccgen',
         path: '/card-generator',
         component: () => import('pages/PageCardGenerator.vue'),
       },
       {
+        name: 'about',
         path: '/about',
         component: () => import('pages/PageAbout.vue'),
       },
       {
+        name: 'darien',
         path: '/darien-statements',
         component: () => import('pages/PageDarienStatements.vue'),
         alias:
