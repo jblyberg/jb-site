@@ -2,32 +2,30 @@
   <q-layout view="hHh Lpr lff">
     <div class="wrap-banner shadow-3">
       <div class="main-title">
-        <h2>
-          John Blyberg
-        </h2>
-        <p class="subtitle">
-          Libraries &amp; code
-        </p>
+        <h2>John Blyberg</h2>
+        <p class="subtitle">Libraries &amp; code</p>
       </div>
 
-      <vue-particles
-        color="#ffffff"
-        :particleOpacity="0.7"
-        linesColor="#ffffff"
-        :particlesNumber="80"
-        shapeType="circle"
-        :particleSize="5"
-        :linesWidth="2"
-        :lineLinked="true"
-        :lineOpacity="0.4"
-        :linesDistance="150"
-        :moveSpeed="3"
-        :hoverEffect="true"
-        hoverMode="grab"
-        :clickEffect="true"
-        clickMode="push"
-        :class="bannerClass()"
-      />
+      <transition appear enter-active-class="animated fadeIn">
+        <vue-particles
+          color="#ffffff"
+          :particleOpacity="0.7"
+          linesColor="#ffffff"
+          :particlesNumber="80"
+          shapeType="circle"
+          :particleSize="5"
+          :linesWidth="2"
+          :lineLinked="true"
+          :lineOpacity="0.4"
+          :linesDistance="150"
+          :moveSpeed="3"
+          :hoverEffect="true"
+          hoverMode="grab"
+          :clickEffect="true"
+          clickMode="push"
+          :class="bannerClass()"
+        />
+      </transition>
 
       <q-header class="bg-transparent">
         <q-toolbar class="q-pa-sm">
@@ -44,7 +42,7 @@
       </q-header>
 
       <q-drawer v-model="drawer" :width="200" :breakpoint="768" show-if-above>
-        <q-scroll-area class="fit ">
+        <q-scroll-area class="fit">
           <q-list padding class="menu-list">
             <q-item
               v-for="(nav, index) in navs"
@@ -115,7 +113,10 @@ export default {
       }
     },
     bannerClass() {
-      return 'banner-' + this.$route.name;
+      if (this.$route.name) {
+        return 'banner-' + this.$route.name;
+      }
+      return 'banner-sky';
     },
   },
 };
@@ -201,7 +202,7 @@ export default {
 }
 
 .banner-darien {
-  background-image: url('../assets/trees.jpg');
+  background-image: url('../assets/darien.jpg');
 }
 
 .light-dimmed:after {
