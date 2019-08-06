@@ -10,7 +10,7 @@ export default {};
 
 <style lang="scss" scoped>
 .my-page-container {
-  padding: 20px 30px 0px 30px;
+  padding: 20px 100px 0px 30px;
 }
 
 h3 {
