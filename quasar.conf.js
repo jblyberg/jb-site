@@ -45,6 +45,13 @@ module.exports = function(ctx) {
         'QTabs',
         'QRouteTab',
         'QScrollArea',
+        'QFooter',
+        'QCard',
+        'QCardSection',
+        'QCardActions',
+        'QForm',
+        'QInput',
+        'QRadio',
       ],
 
       directives: ['Ripple'],

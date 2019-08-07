@@ -8,12 +8,16 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .my-page-container {
-  padding: 20px 30px 0px 30px;
-  @media (min-width: 900px) {
-    padding: 20px 100px 0px 30px;
+  padding: 40px 110px 0px 30px;
+  @media (max-width: 900px) {
+    padding: 40px 30px 0px 30px;
   }
+}
+
+.page-title {
+  padding-bottom: 30px;
 }
 
 h1 {
@@ -42,37 +46,39 @@ h3 {
   color: #f0a937;
   margin: 0;
   @media (max-width: 900px) {
-    font-size: 1.4rem;
+    line-height: 1.7rem;
+    font-size: 1.6rem;
   }
 }
 
 h4 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-family: 'Englebert', sans-serif;
-  color: #d65128;
+  color: #d17f48;
   margin: 0;
   @media (max-width: 900px) {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 }
 
 h5 {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-family: 'Englebert', sans-serif;
-  color: #d65128;
+  color: #d17f48;
   margin: 0;
-  // @media (max-width: 900px) {
-  //   font-size: 0.8rem;
-  // }
+  @media (max-width: 900px) {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 1.1rem;
   font-family: 'Englebert', sans-serif;
-  color: #d65128;
+  color: #d17f48;
   margin: 0;
   @media (max-width: 900px) {
-    font-size: 16px;
+    font-size: 1.2rem;
   }
 }
 </style>

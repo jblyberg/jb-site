@@ -1,22 +1,25 @@
 <template>
   <q-page>
-    <my-page-container>
-      <h3>Welcome to my page!</h3>
-      <div v-for="n in 100" :key="n" class="q-py-xs">
-        {{ n }} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </div>
-    </my-page-container>
+    My page
   </q-page>
 </template>
 
 <script>
-export default {
-  components: {
-    'my-page-container': () =>
-      import('components/MyPageContainer.vue').then(m => m.default),
-  },
-};
+export default {};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.doxie-divider {
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.doxie-divider img {
+  display: block;
+  width: 80%;
+  min-width: 100px;
+  max-width: 350px; /*actual image width*/
+  height: auto; /* maintain aspect ratio*/
+  margin: auto; /*optional centering of image*/
+}
+</style>

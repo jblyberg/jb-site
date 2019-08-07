@@ -1,18 +1,11 @@
 <template>
   <q-page>
-    <my-page-container>
-      <h3>About Me</h3>
-    </my-page-container>
+    <h3>About Me</h3>
   </q-page>
 </template>
 
 <script>
-export default {
-  components: {
-    'my-page-container': () =>
-      import('components/MyPageContainer.vue').then(m => m.default),
-  },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped></style>
