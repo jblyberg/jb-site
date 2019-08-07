@@ -5,9 +5,7 @@
     <default-footer />
 
     <q-page-container style="padding-top: 0px">
-      <default-page-container>
-        <router-view />
-      </default-page-container>
+      <router-view />
     </q-page-container>
   </q-layout>
 </template>
@@ -15,10 +13,6 @@
 <script>
 export default {
   components: {
-    'default-page-container': () =>
-      import('components/DefaultLayout/DefaultPageContainer.vue').then(
-        m => m.default
-      ),
     'default-header': () =>
       import('components/DefaultLayout/DefaultLayoutHeader.vue').then(
         m => m.default

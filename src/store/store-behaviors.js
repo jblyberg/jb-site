@@ -15,9 +15,9 @@ const actions = {
 };
 
 const getters = {
-  menuDrawerState: state => {
-    return state.menuDrawerState;
-  },
+  // menuDrawerState: state => {
+  //   return state.menuDrawerState;
+  // },
 };
 
 export default {

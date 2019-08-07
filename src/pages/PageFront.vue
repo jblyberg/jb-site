@@ -1,7 +1,9 @@
 <template>
-  <q-page>
-    My page
-  </q-page>
+  <default-page-container>
+    <q-page>
+      My page
+    </q-page>
+  </default-page-container>
 </template>
 
 <script>

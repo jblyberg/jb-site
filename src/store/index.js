@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import behaviors from './store-behaviors';
+import catalogCards from './store-catalog-cards';
 
 Vue.use(Vuex);
 
@@ -14,6 +15,7 @@ export default function(/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       behaviors,
+      catalogCards,
     },
 
     // enable strict mode (adds overhead!)

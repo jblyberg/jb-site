@@ -60,7 +60,7 @@ export default {
     color: black;
     padding-top: 56px;
     padding-left: 95px;
-    max-width: 365px;
+    max-width: 355px;
     word-wrap: break-word;
     font-family: 'freemonobold';
     font-size: 13px;

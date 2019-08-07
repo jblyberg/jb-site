@@ -1,24 +1,24 @@
 <template>
-  <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
+  <q-form @submit="submitForm" @reset="resetCard" class="q-gutter-md">
     <div class="q-gutter-sm text-white">
       <q-radio
         dark
-        v-model="matType"
-        val="print"
+        :value="card.cardtype"
+        val=""
         label="Print"
         color="accent"
       />
       <q-radio
         dark
-        v-model="matType"
-        val="audio"
+        :value="card.cardtype"
+        val="PHONO"
         label="Audio"
         color="accent"
       />
       <q-radio
         dark
-        v-model="matType"
-        val="video"
+        :value="card.cardtype"
+        val="VIDEO"
         label="Video"
         color="accent"
       />
@@ -26,15 +26,7 @@
 
     <q-input
       dark
-      v-model="callNum"
-      label="Call Number"
-      color="accent"
-      class="text-white"
-    />
-
-    <q-input
-      dark
-      v-model="title"
+      :value="card.title"
       label="Title"
       color="accent"
       class="text-white"
@@ -42,8 +34,16 @@
 
     <q-input
       dark
+      :value="card.callnum"
+      label="Call Number"
+      color="accent"
+      class="text-white"
+    />
+
+    <q-input
+      dark
       label="Card Text"
-      v-model="text"
+      :value="card.cardtext"
       filled
       type="textarea"
       color="accent"
@@ -51,7 +51,7 @@
 
     <q-input
       dark
-      v-model="scribble1"
+      :value="card.scribble1"
       label="Scribble One"
       color="accent"
       class="text-white"
@@ -59,7 +59,7 @@
 
     <q-input
       dark
-      v-model="scribble2"
+      :value="card.scribble2"
       label="Scribble Two"
       color="accent"
       class="text-white"
@@ -67,7 +67,7 @@
 
     <q-input
       dark
-      v-model="scribble3"
+      :value="card.scribble3"
       label="Scribble Three"
       color="accent"
       class="text-white"
@@ -87,18 +87,33 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 export default {
-  data() {
-    return {
-      matType: 'print',
-      callNum: null,
-    };
+  // data() {
+  //   return {
+  //     card: {
+  //       title: '',
+  //       cardtype: '',
+  //       callnum: '',
+  //       cardtext: '',
+  //       scribble1: '',
+  //       scribble2: '',
+  //       scribble3: '',
+  //     },
+  //   };
+  // },
+  computed: {
+    ...mapState('catalogCards', ['card']),
+  },
+  methods: {
+    ...mapActions('catalogCards', ['createCard']),
+    submitForm() {
+      this.createCard(this.card);
+    },
+    resetCard() {},
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.q-radio--dark .q-radio__inner--active {
-  color: #d17f48;
-}
-</style>
+<style lang="scss" scoped></style>
