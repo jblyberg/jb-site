@@ -70,10 +70,13 @@
     <div>
       <q-btn
         :label="buttonText"
-        type="submit"
         color="accent"
         class="full-width"
-      />
+        @click="submitForm"
+        :disabled="disableSubmit"
+      >
+        <q-spinner-dots v-if="disableSubmit" color="grey-1" />
+      </q-btn>
     </div>
   </q-form>
 </template>
@@ -83,6 +86,11 @@ import { mapActions, mapState } from 'vuex';
 import { mapFields } from 'vuex-map-fields';
 
 export default {
+  data() {
+    return {
+      disableSubmit: false,
+    };
+  },
   computed: {
     ...mapState('catalogCards', ['cardImage']),
     ...mapFields('catalogCards', [
@@ -95,6 +103,9 @@ export default {
       'card.scribble3',
     ]),
     buttonText() {
+      if (this.disableSubmit === true) {
+        return '';
+      }
       if (this.cardImage === null) {
         return 'Make My Card!';
       }
@@ -105,6 +116,10 @@ export default {
     ...mapActions('catalogCards', ['createCard', 'resetCard']),
     submitForm() {
       this.createCard();
+      this.disableSubmit = true;
+      setTimeout(() => {
+        this.disableSubmit = false;
+      }, 5000);
     },
   },
 };

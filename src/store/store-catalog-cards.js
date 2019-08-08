@@ -28,6 +28,9 @@ const mutations = {
   setCardImage(state, value) {
     state.cardImage = value;
   },
+  setCardId(state, value) {
+    state.cardId = value;
+  },
   resetCard(state) {
     // state.card = Object.assign({}, initialState);
     Object.assign(state, getInitialState());
@@ -37,17 +40,17 @@ const mutations = {
 const actions = {
   createCard({ commit }) {
     axios
-      .post('http://localhost:3000/cards/create', state.card)
+      .post('http://192.168.23.157:3000/cards/create', state.card)
       .then(function(response) {
-        console.log(response);
+        commit(
+          'setCardImage',
+          'http://192.168.23.157:3000/cards/card/' + response.data.id
+        );
+        commit('setCardId', response.data.id);
       })
       .catch(function(error) {
         console.log(error);
       });
-    commit(
-      'setCardImage',
-      'http://localhost:3000/cards/card/4fb2f581-fb45-42c3-9bb5-a0db39b68389'
-    );
   },
   resetCard({ commit }) {
     commit('resetCard');

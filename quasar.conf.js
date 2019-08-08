@@ -56,6 +56,9 @@ module.exports = function(ctx) {
         'QTabPanel',
         'QSeparator',
         'QScrollArea',
+        'QDialog',
+        'QSpinner',
+        'QSpinnerDots',
       ],
 
       directives: ['Ripple'],
