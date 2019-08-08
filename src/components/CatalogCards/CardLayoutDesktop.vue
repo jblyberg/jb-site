@@ -5,7 +5,7 @@
         class="inset-shadow flex inline shadow-box
         flex-center doc-inset-shadow rounded-borders"
       >
-        <card-haiku-writer />
+        <card-image-block />
       </div>
       <span class="desktop-buttons-row">
         <card-action-buttons />
@@ -22,10 +22,8 @@
 <script>
 export default {
   components: {
-    'card-haiku-writer': () =>
-      import('components/CatalogCards/CardHaikuWriter.vue').then(
-        m => m.default
-      ),
+    'card-image-block': () =>
+      import('components/CatalogCards/CardImageBlock.vue').then(m => m.default),
     'card-create-form': () =>
       import('components/CatalogCards/CardCreateForm.vue').then(m => m.default),
     'card-action-buttons': () =>

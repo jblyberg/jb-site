@@ -1,7 +1,7 @@
 <template>
   <q-drawer
     :value="menuDrawerState"
-    :width="200"
+    :width="210"
     :breakpoint="768"
     show-if-above
     @hide="setMenuDrawerState(false)"
@@ -45,7 +45,7 @@ export default {
           to: '/',
         },
         {
-          label: 'Card Catalog',
+          label: 'Catalog Cards',
           icon: 'horizontal_split',
           to: '/card-generator',
         },

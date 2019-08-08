@@ -3,7 +3,7 @@
     <div
       class="inset-shadow flex inline mobile-shadow-box flex-center doc-inset-shadow"
     >
-      <card-haiku-writer />
+      <card-image-block />
     </div>
 
     <div>
@@ -52,10 +52,8 @@ export default {
     };
   },
   components: {
-    'card-haiku-writer': () =>
-      import('components/CatalogCards/CardHaikuWriter.vue').then(
-        m => m.default
-      ),
+    'card-image-block': () =>
+      import('components/CatalogCards/CardImageBlock.vue').then(m => m.default),
     'card-create-form': () =>
       import('components/CatalogCards/CardCreateForm.vue').then(m => m.default),
     'card-action-buttons': () =>

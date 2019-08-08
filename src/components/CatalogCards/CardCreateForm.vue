@@ -1,23 +1,17 @@
 <template>
   <q-form @submit="submitForm" @reset="resetCard" class="q-gutter-md">
     <div class="q-gutter-sm text-white">
+      <q-radio dark v-model="cardtype" val="" label="Print" color="accent" />
       <q-radio
         dark
-        :value="card.cardtype"
-        val=""
-        label="Print"
-        color="accent"
-      />
-      <q-radio
-        dark
-        :value="card.cardtype"
+        v-model="cardtype"
         val="PHONO"
         label="Audio"
         color="accent"
       />
       <q-radio
         dark
-        :value="card.cardtype"
+        v-model="cardtype"
         val="VIDEO"
         label="Video"
         color="accent"
@@ -26,7 +20,7 @@
 
     <q-input
       dark
-      :value="card.title"
+      v-model="title"
       label="Title"
       color="accent"
       class="text-white"
@@ -34,7 +28,7 @@
 
     <q-input
       dark
-      :value="card.callnum"
+      v-model="callnum"
       label="Call Number"
       color="accent"
       class="text-white"
@@ -43,7 +37,7 @@
     <q-input
       dark
       label="Card Text"
-      :value="card.cardtext"
+      v-model="cardtext"
       filled
       type="textarea"
       color="accent"
@@ -51,7 +45,7 @@
 
     <q-input
       dark
-      :value="card.scribble1"
+      v-model="scribble1"
       label="Scribble One"
       color="accent"
       class="text-white"
@@ -59,7 +53,7 @@
 
     <q-input
       dark
-      :value="card.scribble2"
+      v-model="scribble2"
       label="Scribble Two"
       color="accent"
       class="text-white"
@@ -67,51 +61,51 @@
 
     <q-input
       dark
-      :value="card.scribble3"
+      v-model="scribble3"
       label="Scribble Three"
       color="accent"
       class="text-white"
     />
 
     <div>
-      <q-btn label="Make my Card!" type="submit" color="primary" />
       <q-btn
-        label="Try Again"
-        type="reset"
-        color="primary"
-        flat
-        class="q-ml-sm"
+        :label="buttonText"
+        type="submit"
+        color="accent"
+        class="full-width"
       />
     </div>
   </q-form>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
+import { mapFields } from 'vuex-map-fields';
 
 export default {
-  // data() {
-  //   return {
-  //     card: {
-  //       title: '',
-  //       cardtype: '',
-  //       callnum: '',
-  //       cardtext: '',
-  //       scribble1: '',
-  //       scribble2: '',
-  //       scribble3: '',
-  //     },
-  //   };
-  // },
   computed: {
-    ...mapState('catalogCards', ['card']),
+    ...mapState('catalogCards', ['cardImage']),
+    ...mapFields('catalogCards', [
+      'card.title',
+      'card.cardtype',
+      'card.callnum',
+      'card.cardtext',
+      'card.scribble1',
+      'card.scribble2',
+      'card.scribble3',
+    ]),
+    buttonText() {
+      if (this.cardImage === null) {
+        return 'Make My Card!';
+      }
+      return 'Try Again!';
+    },
   },
   methods: {
-    ...mapActions('catalogCards', ['createCard']),
+    ...mapActions('catalogCards', ['createCard', 'resetCard']),
     submitForm() {
-      this.createCard(this.card);
+      this.createCard();
     },
-    resetCard() {},
   },
 };
 </script>
