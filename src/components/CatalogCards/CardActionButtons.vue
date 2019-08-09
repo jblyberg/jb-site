@@ -40,7 +40,6 @@
       color="accent"
       icon="share"
       :disabled="disabled"
-      @click="showNotif"
       v-clipboard:copy="cardImage"
       v-clipboard:success="onCopy"
       v-clipboard:error="onError"
@@ -49,7 +48,7 @@
         anchor="top middle"
         self="bottom middle"
         :offset="[10, 10]"
-        v-model="showShareTip"
+        v-model="showCopyTip"
       >
         <strong>Copy image link</strong>
       </q-tooltip>
@@ -68,7 +67,7 @@ export default {
     return {
       showResetTip: false,
       showDownloadTip: false,
-      showShareTip: false,
+      showCopyTip: false,
     };
   },
   computed: {
@@ -89,20 +88,19 @@ export default {
           link.download = 'card-' + this.cardId + '.png';
           link.click();
         })
-        .catch(error => {
-          console.error(error);
+        .catch(() => {
+          this.showNotif('Unable to download card');
         });
     },
     onCopy() {
-      console.log('copied');
+      this.showNotif('Card URL copied to clipboard!');
     },
     onError() {
-      console.log('could not copy');
+      this.showNotif('Unable to copy URL');
     },
-    showNotif() {
+    showNotif(msg) {
       this.$q.notify({
-        message:
-          '<span class="center-in-container">Card URL copied to clipboard!</span>',
+        message: '<span class="center-in-container">' + msg + '</span>',
         html: true,
       });
     },

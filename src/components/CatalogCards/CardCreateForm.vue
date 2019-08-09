@@ -1,7 +1,7 @@
 <template>
   <q-form @submit="submitForm" @reset="resetCard" class="q-gutter-md">
     <div class="q-gutter-sm text-white">
-      <q-radio dark v-model="cardtype" val="" label="Print" color="accent" />
+      <q-radio dark v-model="cardtype" val label="Print" color="accent" />
       <q-radio
         dark
         v-model="cardtype"
@@ -84,6 +84,8 @@
 <script>
 import { mapActions, mapState } from 'vuex';
 import { mapFields } from 'vuex-map-fields';
+import { scroll } from 'quasar';
+const { getScrollTarget, setScrollPosition } = scroll;
 
 export default {
   data() {
@@ -117,9 +119,18 @@ export default {
     submitForm() {
       this.createCard();
       this.disableSubmit = true;
+      if (this.$q.platform.is.mobile) {
+        this.scrollToElement(document.getElementById('CatalogCard'));
+      }
       setTimeout(() => {
         this.disableSubmit = false;
       }, 5000);
+    },
+    scrollToElement(el) {
+      const target = getScrollTarget(el);
+      const offset = el.offsetTop;
+      const duration = 300;
+      setScrollPosition(target, offset, duration);
     },
   },
 };

@@ -32,7 +32,6 @@ const mutations = {
     state.cardId = value;
   },
   resetCard(state) {
-    // state.card = Object.assign({}, initialState);
     Object.assign(state, getInitialState());
   },
 };

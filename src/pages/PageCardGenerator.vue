@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page id="CatalogCard">
     <card-layout-desktop v-if="this.$q.platform.is.desktop" />
     <card-layout-mobile v-else />
   </q-page>
