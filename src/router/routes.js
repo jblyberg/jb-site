@@ -14,9 +14,19 @@ const routes = [
         component: () => import('pages/PageCardGenerator.vue'),
       },
       {
+        name: 'resume',
+        path: '/resume',
+        component: () => import('pages/PageResume.vue'),
+      },
+      {
         name: 'about',
         path: '/about',
         component: () => import('pages/PageAbout.vue'),
+      },
+      {
+        // name: 'contact',
+        path: '/contact',
+        component: () => import('pages/PageContact.vue'),
       },
       {
         name: 'darien',

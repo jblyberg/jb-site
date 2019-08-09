@@ -2,7 +2,7 @@
   <div class="wrap-banner shadow-3">
     <div class="main-title">
       <h2>John Blyberg</h2>
-      <p class="subtitle">Libraries &amp; code.</p>
+      <p class="subtitle">Libraries &amp; code</p>
     </div>
 
     <transition appear enter-active-class="animated fadeIn">
@@ -22,7 +22,7 @@
         hoverMode="grab"
         :clickEffect="true"
         clickMode="push"
-        :class="bannerClass()"
+        :style="bannerBgStyle"
       />
     </transition>
 
@@ -56,15 +56,17 @@ export default {
   },
   computed: {
     ...mapState('behaviors', ['menuDrawerState']),
+    bannerBgStyle() {
+      if (this.$route.name) {
+        return (
+          "background-image: url('assets/banners/" + this.$route.name + ".jpg')"
+        );
+      }
+      return "background-image: url('assets/banners/sky.jpg')";
+    },
   },
   methods: {
     ...mapActions('behaviors', ['setMenuDrawerState']),
-    bannerClass() {
-      if (this.$route.name) {
-        return 'banner-' + this.$route.name;
-      }
-      return 'banner-sky';
-    },
   },
 };
 </script>
@@ -114,21 +116,5 @@ export default {
       font-size: 1.5rem;
     }
   }
-}
-
-.banner-front {
-  background-image: url('~assets/banners/sky.jpg');
-}
-
-.banner-ccgen {
-  background-image: url('~assets/banners/keys.jpg');
-}
-
-.banner-about {
-  background-image: url('~assets/banners/otter.jpg');
-}
-
-.banner-darien {
-  background-image: url('~assets/banners/darien.jpg');
 }
 </style>

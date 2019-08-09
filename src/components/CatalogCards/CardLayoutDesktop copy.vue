@@ -1,30 +1,22 @@
 <template>
-  <default-page-container>
-    <q-page class="catalog-card-page">
-      <div class="row">
-        <div class="col-12 col-md-4">
-          <div class="q-pa-md">
-            <div
-              class="inset-shadow flex inline shadow-box
+  <div class="q-pa-md row items-start q-gutter-md center-in-container">
+    <div class="q-pa-md">
+      <div
+        class="inset-shadow flex inline shadow-box
         flex-center doc-inset-shadow rounded-borders"
-            >
-              <card-image-block />
-            </div>
-            <span class="desktop-buttons-row">
-              <card-action-buttons />
-            </span>
-            <card-instructions />
-          </div>
-        </div>
-        <div class="col-12 col-md-8">
-          <div>
-            <h3>Create a Catalog Card!</h3>
-            <card-create-form />
-          </div>
-        </div>
+      >
+        <card-image-block />
       </div>
-    </q-page>
-  </default-page-container>
+      <span class="desktop-buttons-row">
+        <card-action-buttons />
+      </span>
+      <card-instructions />
+    </div>
+    <div class="desktop-card-create-form">
+      <h3>Create a Catalog Card!</h3>
+      <card-create-form />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -47,10 +39,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.catalog-card-page {
-  margin-top: 50px;
-}
-
 .shadow-box {
   padding: 10px;
   background-color: #fff;

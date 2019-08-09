@@ -41,18 +41,28 @@ export default {
       navs: [
         {
           label: 'Home',
-          icon: 'home',
+          icon: 'fas fa-home',
           to: '/',
         },
         {
           label: 'Catalog Cards',
-          icon: 'horizontal_split',
+          icon: 'fas fa-font',
           to: '/card-generator',
         },
         {
           label: 'About Me',
-          icon: 'person',
+          icon: 'fas fa-user',
           to: '/about',
+        },
+        {
+          label: 'Résumé',
+          icon: 'fas fa-file',
+          to: '/resume',
+        },
+        {
+          label: 'Contact Me',
+          icon: 'fas fa-envelope',
+          to: '/contact',
         },
       ],
     };
@@ -82,6 +92,15 @@ export default {
 
 .default-drawer-item {
   font-size: 18px;
+}
+
+.menu-list {
+  a:hover {
+    text-decoration: none;
+  }
+  a:active {
+    text-decoration: none;
+  }
 }
 
 .menu-item-icon {
