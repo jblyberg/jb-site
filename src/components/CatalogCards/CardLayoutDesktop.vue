@@ -2,11 +2,10 @@
   <default-page-container>
     <q-page class="catalog-card-page">
       <div class="row">
-        <div class="col-12 col-md-4">
+        <div class="col-6">
           <div class="q-pa-md">
             <div
-              class="inset-shadow flex inline shadow-box
-        flex-center doc-inset-shadow rounded-borders"
+              class="inset-shadow flex inline shadow-box flex-center doc-inset-shadow rounded-borders"
             >
               <card-image-block />
             </div>
@@ -16,7 +15,7 @@
             <card-instructions />
           </div>
         </div>
-        <div class="col-12 col-md-8">
+        <div class="col">
           <div>
             <h3>Create a Catalog Card!</h3>
             <card-create-form />

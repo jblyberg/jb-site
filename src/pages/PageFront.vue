@@ -102,7 +102,7 @@ export default {
 }
 
 .front-page-section-content {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   flex-wrap: wrap;
   display: flex;
   align-items: center;
