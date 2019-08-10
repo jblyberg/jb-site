@@ -47,6 +47,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@font-face {
+  font-family: 'freemonobold';
+  src: url('../../assets/fonts/freemonobold.ttf');
+}
+
 .card-writer {
   background-image: url('~assets/cardstock/card2.png');
   background-repeat: no-repeat;

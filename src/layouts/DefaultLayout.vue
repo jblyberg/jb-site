@@ -4,7 +4,7 @@
     <default-menu />
     <default-footer />
 
-    <q-page-container style="padding-top: 0px">
+    <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
