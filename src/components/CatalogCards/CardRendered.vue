@@ -1,6 +1,10 @@
 <template>
-  <div class="card-image" :style="cardImageBgStyle">
-    <img src="~assets/cardstock/card1.png" style="visibility: hidden;" />
+  <div>
+    <q-img
+      :src="cardImage"
+      spinner-color="white"
+      style="height: 221px; width: 361px"
+    />
   </div>
 </template>
 
@@ -10,17 +14,8 @@ import { mapState } from 'vuex';
 export default {
   computed: {
     ...mapState('catalogCards', ['cardImage']),
-    cardImageBgStyle() {
-      return "background-image: url('" + this.cardImage + "')";
-    },
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.card-image {
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: flex;
-}
-</style>
+<style lang="scss" scoped></style>

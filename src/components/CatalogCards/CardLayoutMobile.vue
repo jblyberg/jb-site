@@ -1,16 +1,18 @@
 <template>
-  <div class="row items-start">
-    <div class="inset-shadow mobile-shadow-box doc-inset-shadow">
+  <div class="mobile-card-view">
+    <!-- Card image row -->
+    <div class="row justify-around inset-shadow mobile-card-row">
       <card-image-block />
     </div>
 
-    <div>
-      <span class="mobile-buttons-row">
-        <card-action-buttons />
-      </span>
+    <!-- Button row -->
+    <div class="row justify-around">
+      <card-action-buttons />
+    </div>
 
-      <!-- Test -->
-      <div class>
+    <!-- Mobile tabs row -->
+    <div class="row justify-around">
+      <div class="col-12">
         <q-tabs
           v-model="tab"
           dense
@@ -18,8 +20,6 @@
           active-color="accent"
           indicator-color="primary"
           narrow-indicator
-          align="center"
-          :breakpoint="0"
         >
           <q-tab name="create" label="Create Card" />
           <q-tab name="instructions" label="Instructions" />
@@ -37,7 +37,6 @@
           <card-instructions />
         </q-tab-panel>
       </q-tab-panels>
-      <!-- Test -->
     </div>
   </div>
 </template>
@@ -67,23 +66,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.mobile-shadow-box {
-  $side-padding: 100%;
-  padding: 10px $side-padding 10px $side-padding;
-  background-color: #fff;
+.mobile-card-view {
+  margin-top: -76px;
+  margin-bottom: 55px;
 }
 
-.mobile-buttons-row {
-  margin-left: 0px;
+.mobile-card-row {
+  background-color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.mobile-create-card-form {
-  margin-left: 0px;
-}
-
-.mobile-card-tabs {
-  margin-bottom: -16px;
-  margin-top: -16px;
+.q-tab-panels.q-panel-parent {
+  width: 100%;
 }
 
 .mobile-card-tab-panel {

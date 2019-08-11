@@ -1,5 +1,10 @@
 <template>
   <div class="card-writer">
+    <q-img
+      :src="cardStockImage"
+      spinner-color="white"
+      style="height: 221px; width: 361px"
+    />
     <div class="type-animation-block">
       <vue-typed-js
         :typeSpeed="120"
@@ -13,7 +18,6 @@
         <h5 class="typing"></h5>
       </vue-typed-js>
     </div>
-    <img src="~assets/cardstock/card1.png" style="visibility: hidden;" />
   </div>
 </template>
 
@@ -28,6 +32,12 @@ export default {
     return {
       haikus: haikus.haikus,
     };
+  },
+  computed: {
+    cardStockImage() {
+      const randCardNum = Math.floor(Math.random() * 4) + 1;
+      return '../../assets/cardstock/card' + randCardNum + '.png';
+    },
   },
   methods: {
     nl2br(str, replaceMode, isXhtml = true) {

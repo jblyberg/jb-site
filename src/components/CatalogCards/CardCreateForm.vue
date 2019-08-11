@@ -2,8 +2,10 @@
   <q-form @submit="submitForm" @reset="resetCard">
     <div class="col-12">
       <div class="row justify-around">
-        <div class="q-gutter-sm text-white">
+        <div class="col-3">
           <q-radio dark v-model="cardtype" val label="Print" color="accent" />
+        </div>
+        <div class="col-3">
           <q-radio
             dark
             v-model="cardtype"
@@ -11,6 +13,8 @@
             label="Audio"
             color="accent"
           />
+        </div>
+        <div class="col-3">
           <q-radio
             dark
             v-model="cardtype"
@@ -78,6 +82,7 @@
             class="full-width"
             @click="submitForm"
             :disabled="disableSubmit"
+            style="margin-top: 15px"
           >
             <q-spinner-dots v-if="disableSubmit" color="grey-1" />
           </q-btn>
