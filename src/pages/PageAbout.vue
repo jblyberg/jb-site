@@ -1,5 +1,5 @@
 <template>
-  <q-page class="about-page">
+  <q-page>
     <div class="row justify-around">
       <div class="col-6 col-md-4 column items-center">
         <q-img
@@ -87,10 +87,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.about-page {
-  font-size: 1.2rem;
-}
-
 .about-page-headshot {
   margin-top: 10px;
 }

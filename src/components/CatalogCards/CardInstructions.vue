@@ -1,5 +1,5 @@
 <template>
-  <div class="card-instructions">
+  <div>
     <h4>Instructions:</h4>
     <p>You can use this tool to create any kind of library card!</p>
     <p>
@@ -20,9 +20,4 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
-.card-instructions {
-  width: 100%;
-  max-width: 385px;
-}
-</style>
+<style lang="scss" scoped></style>

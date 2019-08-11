@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md q-gutter-sm center-in-container">
+  <div class="q-pa-md q-gutter-sm">
     <q-btn
       round
       color="secondary"

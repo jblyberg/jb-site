@@ -1,8 +1,6 @@
 <template>
-  <div class="row items-start  center-in-container mobile-card-container">
-    <div
-      class="inset-shadow flex inline mobile-shadow-box flex-center doc-inset-shadow"
-    >
+  <div class="row items-start">
+    <div class="inset-shadow mobile-shadow-box doc-inset-shadow">
       <card-image-block />
     </div>
 
@@ -12,7 +10,7 @@
       </span>
 
       <!-- Test -->
-      <div class="">
+      <div class>
         <q-tabs
           v-model="tab"
           dense
@@ -69,11 +67,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.mobile-card-container {
-  margin-top: -56px;
-  padding-bottom: 50px;
-}
-
 .mobile-shadow-box {
   $side-padding: 100%;
   padding: 10px $side-padding 10px $side-padding;
