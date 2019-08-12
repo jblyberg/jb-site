@@ -41,7 +41,12 @@ export default {
 
 <style lang="scss" scoped>
 .front-page-section-row {
-  margin-bottom: 20px;
+  @media (min-width: 1024px) {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 1024px) {
+    margin-bottom: 35px;
+  }
 }
 .big-icon {
   color: #d17f48;
@@ -49,5 +54,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1024px) {
+    margin-bottom: 30px;
+  }
 }
 </style>
