@@ -1,0 +1,53 @@
+<template>
+  <div :class="classes">
+    <div class="col-12 col-md-2 big-icon">
+      <q-icon :name="rowContent.icon" />
+    </div>
+    <div class="col-9 col-md-9">
+      <div class="row">
+        <p>{{ rowContent.blurb }}</p>
+      </div>
+      <div class="row">
+        <span>
+          <q-icon
+            name="fas fa-angle-double-right"
+            class="front-page-icon-more"
+          />
+          <router-link to="/about">More about me</router-link>
+        </span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['rowContent'],
+  computed: {
+    classes() {
+      return 'row justify-around front-page-section-row' + this.reverse();
+    },
+  },
+  methods: {
+    reverse() {
+      if (this.rowContent.reverse === true) {
+        return ' reverse';
+      }
+      return '';
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.front-page-section-row {
+  margin-bottom: 20px;
+}
+.big-icon {
+  color: #d17f48;
+  font-size: 6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
