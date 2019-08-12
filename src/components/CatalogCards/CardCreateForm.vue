@@ -1,95 +1,93 @@
 <template>
-  <q-form @submit="submitForm" @reset="resetCard">
-    <div class="col-12">
-      <div class="row justify-around">
-        <div class="col-3">
-          <q-radio dark v-model="cardtype" val label="Print" color="accent" />
-        </div>
-        <div class="col-3">
-          <q-radio
-            dark
-            v-model="cardtype"
-            val="PHONO"
-            label="Audio"
-            color="accent"
-          />
-        </div>
-        <div class="col-3">
-          <q-radio
-            dark
-            v-model="cardtype"
-            val="VIDEO"
-            label="Video"
-            color="accent"
-          />
-        </div>
+  <div class="col-12">
+    <div class="row justify-around">
+      <div class="col-3">
+        <q-radio dark v-model="cardtype" val label="Print" color="accent" />
       </div>
-
-      <div class="q-gutter-md">
-        <q-input
+      <div class="col-3">
+        <q-radio
           dark
-          v-model="title"
-          label="Title"
-          color="accent"
-          class="text-white"
-        />
-
-        <q-input
-          dark
-          v-model="callnum"
-          label="Call Number"
-          color="accent"
-          class="text-white"
-        />
-
-        <q-input
-          dark
-          label="Card Text"
-          v-model="cardtext"
-          filled
-          type="textarea"
+          v-model="cardtype"
+          val="PHONO"
+          label="Audio"
           color="accent"
         />
-
-        <q-input
+      </div>
+      <div class="col-3">
+        <q-radio
           dark
-          v-model="scribble1"
-          label="Scribble One"
+          v-model="cardtype"
+          val="VIDEO"
+          label="Video"
           color="accent"
-          class="text-white"
         />
-
-        <q-input
-          dark
-          v-model="scribble2"
-          label="Scribble Two"
-          color="accent"
-          class="text-white"
-        />
-
-        <q-input
-          dark
-          v-model="scribble3"
-          label="Scribble Three"
-          color="accent"
-          class="text-white"
-        />
-
-        <div>
-          <q-btn
-            :label="buttonText"
-            color="accent"
-            class="full-width"
-            @click="submitForm"
-            :disabled="disableSubmit"
-            style="margin-top: 15px"
-          >
-            <q-spinner-dots v-if="disableSubmit" color="grey-1" />
-          </q-btn>
-        </div>
       </div>
     </div>
-  </q-form>
+
+    <div class="q-gutter-md">
+      <q-input
+        dark
+        v-model="title"
+        label="Title"
+        color="accent"
+        class="text-white"
+      />
+
+      <q-input
+        dark
+        v-model="callnum"
+        label="Call Number"
+        color="accent"
+        class="text-white"
+      />
+
+      <q-input
+        dark
+        label="Card Text"
+        v-model="cardtext"
+        filled
+        type="textarea"
+        color="accent"
+      />
+
+      <q-input
+        dark
+        v-model="scribble1"
+        label="Scribble One"
+        color="accent"
+        class="text-white"
+      />
+
+      <q-input
+        dark
+        v-model="scribble2"
+        label="Scribble Two"
+        color="accent"
+        class="text-white"
+      />
+
+      <q-input
+        dark
+        v-model="scribble3"
+        label="Scribble Three"
+        color="accent"
+        class="text-white"
+      />
+
+      <div>
+        <q-btn
+          :label="buttonText"
+          color="accent"
+          class="full-width"
+          @click="submitForm"
+          :disabled="disableSubmit"
+          style="margin-top: 15px"
+        >
+          <q-spinner-dots v-if="disableSubmit" color="grey-1" />
+        </q-btn>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

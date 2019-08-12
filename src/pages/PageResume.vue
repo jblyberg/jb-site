@@ -1,34 +1,68 @@
 <template>
   <q-page>
-    <h3>Résumé etc</h3>
     <div class="row justify-around">
-      <div class="col-12 col-md-2">
-        <h5>Employment</h5>
-      </div>
-      <div class="col-12 col-md-8">
-        sfdgdfglkjdsf gldskfg jlsdkfgj ldskfgj sdkfgj
+      <div class="col-11">
+        <h3>Résumé, etc</h3>
       </div>
     </div>
 
-    <q-separator color="accent" inset />
-
-    <div class="row justify-around">
-      <div class="col-12 col-md-2">
-        <h5>Education</h5>
-      </div>
-      <div class="col-12 col-md-8">
-        sfdgdfglkjdsf gldskfg jlsdf sdf sdf sdf sdf sdkfgj ldskfgj sdkfgj
-      </div>
-    </div>
+    <resume-experience />
+    <q-separator color="accent" spaced inset />
+    <resume-education />
+    <q-separator color="accent" spaced inset />
+    <resume-service />
+    <q-separator color="accent" spaced inset />
+    <resume-awards />
+    <q-separator color="accent" spaced inset />
+    <resume-memberships />
+    <q-separator color="accent" spaced inset />
+    <resume-projects />
+    <q-separator color="accent" spaced inset />
+    <resume-skills />
   </q-page>
 </template>
 
 <script>
-export default {};
+export default {
+  components: {
+    'resume-experience': () =>
+      import('components/Resume/Experience.vue').then(m => m.default),
+    'resume-education': () =>
+      import('components/Resume/Education.vue').then(m => m.default),
+    'resume-service': () =>
+      import('components/Resume/Service.vue').then(m => m.default),
+    'resume-awards': () =>
+      import('components/Resume/Awards.vue').then(m => m.default),
+    'resume-memberships': () =>
+      import('components/Resume/Memberships.vue').then(m => m.default),
+    'resume-skills': () =>
+      import('components/Resume/Skills.vue').then(m => m.default),
+    'resume-projects': () =>
+      import('components/Resume/Projects.vue').then(m => m.default),
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-h3 {
-  margin-bottom: 40px;
+/deep/ .resume-section-header {
+  margin-top: 5px;
+}
+
+/deep/ .resume-section {
+  margin-top: 30px;
+}
+
+/deep/ .q-item {
+  margin-bottom: 15px;
+}
+
+/deep/ .resume-subsection-header {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: rgb(233, 200, 150);
+}
+
+/deep/ .resume-right {
+  float: right;
 }
 </style>

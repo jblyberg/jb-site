@@ -60,6 +60,7 @@ module.exports = function(ctx) {
         'QSpinner',
         'QSpinnerDots',
         'QImg',
+        'QLinearProgress',
       ],
 
       directives: ['Ripple'],

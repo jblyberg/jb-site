@@ -18,6 +18,7 @@
           @click="drawerItemClick"
           :active="active"
           active-class="light-dimmed"
+          :aria-label="nav.label"
         >
           <q-item-section avatar>
             <q-icon class="menu-item-icon" :name="nav.icon" />

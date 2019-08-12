@@ -4,6 +4,7 @@
       round
       color="secondary"
       icon="replay"
+      aria-label="Reset Card"
       :disabled="disabled"
       @click="
         showResetTip = false;
@@ -23,6 +24,7 @@
       round
       color="primary"
       icon="save"
+      aria-label="Download Card"
       :disabled="disabled"
       @click="downloadCard"
     >
@@ -38,7 +40,8 @@
     <q-btn
       round
       color="accent"
-      icon="share"
+      icon="content_copy"
+      aria-label="Copy card image link"
       :disabled="disabled"
       v-clipboard:copy="cardImage"
       v-clipboard:success="onCopy"

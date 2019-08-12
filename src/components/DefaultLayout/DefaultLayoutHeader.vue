@@ -36,6 +36,7 @@
           icon="menu"
           color="#ebebeb"
           size="20px"
+          aria-label="Menu"
         />
       </q-toolbar>
     </q-header>
