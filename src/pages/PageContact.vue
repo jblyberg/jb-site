@@ -12,10 +12,13 @@
           regarding my services. I will generally respond within a day of
           recieveing your message. Thank you!
         </p>
-        <div class="contact-form-inputs">
+        <q-form @submit="submitForm" class="contact-form-inputs">
           <q-input
             dark
-            v-model="name"
+            v-model="formData.name"
+            :rules="[
+              val => (val && val.length > 0) || 'Please enter your name',
+            ]"
             label="Your name"
             color="accent"
             class="text-white"
@@ -23,7 +26,12 @@
 
           <q-input
             dark
-            v-model="email"
+            v-model="formData.email"
+            :rules="[
+              val =>
+                isValidEmailAddress(val) || 'Please use a valid Email address',
+            ]"
+            lazy-rules
             label="Your email address"
             color="accent"
             class="text-white"
@@ -31,7 +39,7 @@
 
           <q-input
             dark
-            v-model="subject"
+            v-model="formData.subject"
             label="Subject"
             color="accent"
             class="text-white"
@@ -40,10 +48,12 @@
           <q-input
             dark
             label="Message"
-            v-model="message"
+            v-model="formData.message"
+            :rules="[val => (val && val.length > 0) || 'Please type a message']"
             filled
             type="textarea"
             color="accent"
+            required
           />
 
           <div class="row justify-around">
@@ -58,14 +68,14 @@
           </div>
 
           <q-btn
+            type="submit"
             label="Send me a message!"
             color="accent"
             class="full-width"
             :disabled="disableSubmit"
-            @click="submitForm"
             style="margin-top: 15px"
           />
-        </div>
+        </q-form>
       </div>
 
       <div class="col-6 col-md-3 big-icon">
@@ -81,19 +91,20 @@ import VueRecaptcha from 'vue-recaptcha';
 export default {
   data() {
     return {
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
+      formData: {
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      },
       disableSubmit: true,
       captchaVerfified: false,
       captchaSiteKey: '6Ld0rbIUAAAAABKdRnlmJM4P4cnDc10ZFV4OtGlx',
     };
   },
   methods: {
-    submitForm(e) {
-      e.preventDefault();
-      this.$refs.recaptcha.execute();
+    submitForm() {
+      // Do stuff
     },
     onCaptchaExpired() {
       this.resetRecaptcha();
@@ -106,6 +117,9 @@ export default {
       this.$refs.recaptcha.reset();
       this.disableSubmit = true;
       this.captchaVerfified = false;
+    },
+    isValidEmailAddress(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     },
   },
   components: { VueRecaptcha },
