@@ -36,7 +36,7 @@ export default {
   computed: {
     cardStockImage() {
       const randCardNum = Math.floor(Math.random() * 4) + 1;
-      return '../../assets/cardstock/card' + randCardNum + '.png';
+      return 'statics/cardstock/card' + randCardNum + '.png';
     },
   },
   methods: {
@@ -63,9 +63,6 @@ export default {
 }
 
 .card-writer {
-  background-image: url('~assets/cardstock/card2.png');
-  background-repeat: no-repeat;
-  background-size: contain;
   display: flex;
 }
 

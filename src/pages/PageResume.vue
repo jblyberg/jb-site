@@ -59,7 +59,7 @@ export default {
 /deep/ .resume-subsection-header {
   margin-bottom: 15px;
   font-size: 1.2rem;
-  color: rgb(233, 200, 150);
+  color: #e9c896;
 }
 
 /deep/ .resume-right {

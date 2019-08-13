@@ -3,7 +3,7 @@
     <div class="row justify-around">
       <div class="col-6 col-md-4 column items-center">
         <q-img
-          src="assets/headshot.jpg"
+          :src="require('assets/headshot.jpg')"
           spinner-color="white"
           class="about-page-headshot"
         />
@@ -63,7 +63,8 @@
           librarians (one of whom is my wife).
           <router-link to="/darien-statements"
             >The Darien Statements</router-link
-          >still embodies the values I have tried to live by in my professional
+          >
+          still embodies the values I have tried to live by in my professional
           life.
         </p>
 

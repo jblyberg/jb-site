@@ -63,7 +63,6 @@
               @expired="onCaptchaExpired"
               :sitekey="captchaSiteKey"
               :loadRecaptchaScript="true"
-              style="margin-top: 15px"
             ></vue-recaptcha>
           </div>
 

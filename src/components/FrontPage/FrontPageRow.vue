@@ -3,18 +3,9 @@
     <div class="col-12 col-md-2 big-icon">
       <q-icon :name="rowContent.icon" />
     </div>
-    <div class="col-9 col-md-9">
+    <div class="col-9 col-md-7">
       <div class="row">
         <p>{{ rowContent.blurb }}</p>
-      </div>
-      <div class="row">
-        <span>
-          <q-icon
-            name="fas fa-angle-double-right"
-            class="front-page-icon-more"
-          />
-          <router-link to="/about">More about me</router-link>
-        </span>
       </div>
     </div>
   </div>
@@ -41,6 +32,7 @@ export default {
 
 <style lang="scss" scoped>
 .front-page-section-row {
+  font-size: 1.3rem;
   @media (min-width: 1024px) {
     margin-bottom: 20px;
   }

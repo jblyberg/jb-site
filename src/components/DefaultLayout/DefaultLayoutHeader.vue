@@ -60,10 +60,12 @@ export default {
     bannerBgStyle() {
       if (this.$route.name) {
         return (
-          "background-image: url('assets/banners/" + this.$route.name + ".jpg')"
+          "background-image: url('statics/banners/" +
+          this.$route.name +
+          ".jpg')"
         );
       }
-      return "background-image: url('assets/banners/sky.jpg')";
+      return "background-image: url('statics/banners/sky.jpg')";
     },
   },
   methods: {
