@@ -39,11 +39,11 @@ const mutations = {
 const actions = {
   createCard({ commit }) {
     axios
-      .post('http://192.168.23.157:3000/cards/create', state.card)
+      .post(process.env.API_SERVER + '/cards/create', state.card)
       .then(function(response) {
         commit(
           'setCardImage',
-          'http://192.168.23.157:3000/cards/card/' + response.data.id
+          process.env.API_SERVER + '/cards/card/' + response.data.id
         );
         commit('setCardId', response.data.id);
       })

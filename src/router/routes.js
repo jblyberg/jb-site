@@ -14,6 +14,11 @@ const routes = [
         component: () => import('pages/PageCardGenerator.vue'),
       },
       {
+        path: '/card/:cardId',
+        component: () => import('components/CatalogCards/CardExisting.vue'),
+        props: true,
+      },
+      {
         name: 'resume',
         path: '/resume',
         component: () => import('pages/PageResume.vue'),

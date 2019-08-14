@@ -6,13 +6,20 @@
       </div>
     </div>
     <div class="row justify-around">
-      <div class="col-11 col-md-7 items-center">
+      <div
+        v-if="!formSubmissionSuccess && !formError"
+        class="col-11 col-md-7 items-center"
+      >
         <p>
           Please feel free to contact me with any inqiries you might have
           regarding my services. I will generally respond within a day of
           recieveing your message. Thank you!
         </p>
-        <q-form @submit="submitForm" class="contact-form-inputs">
+        <q-form
+          ref="contactForm"
+          @submit="submitForm"
+          class="contact-form-inputs"
+        >
           <q-input
             dark
             v-model="formData.name"
@@ -68,13 +75,26 @@
 
           <q-btn
             type="submit"
-            label="Send me a message!"
+            :label="submitLabel"
             color="accent"
             class="full-width"
             :disabled="disableSubmit"
             style="margin-top: 15px"
-          />
+          >
+            <q-spinner-dots v-if="formSubmitted" color="grey-1" />
+          </q-btn>
         </q-form>
+      </div>
+
+      <div v-if="formError" class="col-11 col-md-7 items-center">
+        <p>There was an error: {{ formError }}</p>
+        <p>Please try again later.</p>
+      </div>
+
+      <div v-if="formSubmissionSuccess" class="col-11 col-md-7">
+        <div class="row justify-around contact-submitted">
+          Thank you! I will be in touch soon.
+        </div>
       </div>
 
       <div class="col-6 col-md-3 big-icon">
@@ -86,24 +106,48 @@
 
 <script>
 import VueRecaptcha from 'vue-recaptcha';
+import { setTimeout } from 'timers';
 
 export default {
   data() {
     return {
-      formData: {
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      },
+      formData: this.getInitialState(),
+      submitLabel: 'Send me a message!',
       disableSubmit: true,
+      formSubmitted: false,
+      formSubmissionSuccess: false,
+      formError: false,
       captchaVerfified: false,
       captchaSiteKey: '6Ld0rbIUAAAAABKdRnlmJM4P4cnDc10ZFV4OtGlx',
     };
   },
   methods: {
+    getInitialState() {
+      return {
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      };
+    },
     submitForm() {
-      // Do stuff
+      this.submitLabel = '';
+      this.formSubmitted = true;
+      this.$axios
+        .post(process.env.API_SERVER + '/contact/submit', this.formData)
+        .then(() => {
+          this.formSubmissionSuccess = true;
+          this.formData = this.getInitialState();
+          setTimeout(() => {
+            this.resetForm();
+          }, 5000);
+        })
+        .catch(error => {
+          this.formError = error;
+          setTimeout(() => {
+            this.resetForm();
+          }, 5000);
+        });
     },
     onCaptchaExpired() {
       this.resetRecaptcha();
@@ -111,6 +155,14 @@ export default {
     onCaptchaVerified() {
       this.disableSubmit = false;
       this.captchaVerfified = true;
+    },
+    resetForm() {
+      this.formSubmissionSuccess = false;
+      this.formSubmitted = false;
+      this.formError = false;
+      this.disableSubmit = true;
+      this.captchaVerfified = false;
+      this.submitLabel = 'Send me a message!';
     },
     resetRecaptcha() {
       this.$refs.recaptcha.reset();
@@ -131,6 +183,12 @@ export default {
     margin-bottom: 20px;
   }
 }
+
+.contact-submitted {
+  margin-top: 50px;
+  font-size: 1.5rem;
+}
+
 .big-icon {
   color: #d17f48;
   font-size: 12em;
