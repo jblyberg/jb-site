@@ -41,9 +41,9 @@
       round
       color="accent"
       icon="content_copy"
-      aria-label="Copy card image link"
+      aria-label="Copy card record link"
       :disabled="disabled"
-      v-clipboard:copy="cardImage"
+      v-clipboard:copy="cardUrl"
       v-clipboard:success="onCopy"
       v-clipboard:error="onError"
     >
@@ -53,7 +53,7 @@
         :offset="[10, 10]"
         v-model="showCopyTip"
       >
-        <strong>Copy image link</strong>
+        <strong>Copy card record link</strong>
       </q-tooltip>
     </q-btn>
   </div>
@@ -77,6 +77,10 @@ export default {
     ...mapState('catalogCards', ['cardId', 'cardImage']),
     disabled() {
       return this.cardImage === null;
+    },
+    cardUrl() {
+      const url = window.location;
+      return url.protocol + '//' + url.host + '/card/' + this.cardId;
     },
   },
   methods: {

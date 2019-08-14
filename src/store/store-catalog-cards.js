@@ -54,6 +54,30 @@ const actions = {
   resetCard({ commit }) {
     commit('resetCard');
   },
+  loadCard({ commit }, cardId) {
+    axios
+      .get(process.env.API_SERVER + '/cards/' + cardId)
+      .then(function(response) {
+        const card = {
+          title: response.data.title,
+          cardtype: response.data.cardtype,
+          callnum: response.data.callnum,
+          cardtext: response.data.cardtext,
+          scribble1: response.data.scribble1,
+          scribble2: response.data.scribble2,
+          scribble3: response.data.scribble3,
+        };
+        commit('createCard', card);
+        commit(
+          'setCardImage',
+          process.env.API_SERVER + '/cards/card/' + response.data.id
+        );
+        commit('setCardId', response.data.id);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  },
 };
 
 const getters = {

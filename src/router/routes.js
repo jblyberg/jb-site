@@ -29,7 +29,7 @@ const routes = [
         component: () => import('pages/PageAbout.vue'),
       },
       {
-        // name: 'contact',
+        name: 'contact',
         path: '/contact',
         component: () => import('pages/PageContact.vue'),
       },
@@ -39,6 +39,31 @@ const routes = [
         component: () => import('pages/PageDarienStatements.vue'),
         alias:
           '/2009/04/03/the-darien-statements-on-the-library-and-librarians',
+      },
+      {
+        name: 'sopac',
+        path: '/sopac',
+        component: () => import('pages/PageSopac.vue'),
+      },
+      {
+        name: 'dlwebsite',
+        path: '/darien-library-website',
+        component: () => import('pages/PageLibraryWebsite.vue'),
+      },
+      {
+        name: 'newlibrary',
+        path: '/new-darien-library',
+        component: () => import('pages/PageNewLibrary.vue'),
+      },
+      {
+        name: 'dml',
+        path: '/digital-media-lab',
+        component: () => import('pages/PageDML.vue'),
+      },
+      {
+        name: 'fcminecraft',
+        path: '/fairfield-county-minecraft',
+        component: () => import('pages/PageFCMinecraft.vue'),
       },
     ],
   },

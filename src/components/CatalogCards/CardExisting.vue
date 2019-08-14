@@ -3,11 +3,16 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   props: ['cardId'],
+  methods: {
+    ...mapActions('catalogCards', ['loadCard']),
+  },
   created() {
-    const route = '/' + this.cardId;
-    this.$router.replace(route);
+    this.loadCard(this.cardId);
+    this.$router.replace('/card-generator');
   },
 };
 </script>
