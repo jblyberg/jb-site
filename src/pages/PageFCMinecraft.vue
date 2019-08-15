@@ -8,7 +8,7 @@
 
     <div class="row justify-around">
       <div class="col-11">
-        <md-viewer src="assets/markdown/fcminecraft.md" />
+        <md-viewer src="statics/markdown/fcminecraft.md" />
       </div>
     </div>
   </q-page>

@@ -1,0 +1,1 @@
+Hi! I'm an entrepreneur, freelance app developer, technologist, library consultant and general geeky roustabout living in Lexington, Kentucky. I like to tinker and build things. If it exists, I like to make it better. ::router-link:to:/contact:drop me a line:: and let's figure out how I can help with your next project!

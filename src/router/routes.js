@@ -46,19 +46,9 @@ const routes = [
         component: () => import('pages/PageSopac.vue'),
       },
       {
-        name: 'dlwebsite',
-        path: '/darien-library-website',
-        component: () => import('pages/PageLibraryWebsite.vue'),
-      },
-      {
         name: 'newlibrary',
         path: '/new-darien-library',
         component: () => import('pages/PageNewLibrary.vue'),
-      },
-      {
-        name: 'dml',
-        path: '/digital-media-lab',
-        component: () => import('pages/PageDML.vue'),
       },
       {
         name: 'fcminecraft',

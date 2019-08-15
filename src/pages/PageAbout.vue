@@ -37,7 +37,7 @@
       <div class="col-11 col-md-7">
         <h3>About Me</h3>
         <div>
-          <md-viewer src="assets/markdown/about.md" />
+          <md-viewer src="statics/markdown/about.md" />
         </div>
       </div>
     </div>

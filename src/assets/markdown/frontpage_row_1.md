@@ -1,1 +1,0 @@
-Hi! I'm John Blyberg. I'm an entrepreneur, freelance app developer, technologist, library consultant and general geeky roustabout living in Lexington, Kentucky. I like to tinker and build things. If it exists, I like to make it better. ::router-link:to:/resume:Let me help with your project!::

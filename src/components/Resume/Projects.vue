@@ -37,28 +37,12 @@ export default {
           link: '/sopac',
         },
         {
-          name: 'Darien Library Website',
-          description:
-            // eslint-disable-next-line
-            'The Darien Library website was one of my largest web projects I undertook while working there.It was written in PHP using the Laravel framework.',
-          image: 'statics/project-card-images/dlwebsite.jpg',
-          link: '/darien-library-website',
-        },
-        {
           name: 'New Darien Library',
           description:
             // eslint-disable-next-line
             'Helping to build a brand new library building has been one of the highlights of my career. I was responsible for designing and implementing all the technology.',
           image: 'statics/project-card-images/darienlibrary.jpg',
           link: '/new-darien-library',
-        },
-        {
-          name: 'Digital Media Lab',
-          description:
-            // eslint-disable-next-line
-            'Creating a high-tech space that serves as a "digital Swiss army knife" was a fun project that was well-received by the community.',
-          image: 'statics/project-card-images/dml.jpg',
-          link: '/digital-media-lab',
         },
         {
           name: 'Fairfield County Minecraft',

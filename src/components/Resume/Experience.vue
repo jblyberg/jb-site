@@ -13,11 +13,16 @@
               >Self Employed
               <span class="resume-right"><em>Lexington, KY</em></span>
             </q-item-label>
-            <q-item-label>
-              Library Consultant &amp; Freelance Developer
-              <span class="resume-right">2018 - Present</span>
-            </q-item-label>
-
+            <div class="resume-job-titles">
+              <q-item-label class="row">
+                <div class="col-9">
+                  Library Consultant &amp; Freelance Developer
+                </div>
+                <div class="col-3">
+                  <span class="resume-right">2018 - Present</span>
+                </div>
+              </q-item-label>
+            </div>
             <q-item-label class="resume-job-description">
               <q-list dark dense class="resume-duties-list">
                 <q-item>
@@ -28,7 +33,7 @@
                 </q-item>
                 <q-item>
                   <q-item-section>
-                    I am also currently working on a library software start-up.
+                    Currently working on creating a library software start-up.
                   </q-item-section>
                 </q-item>
               </q-list>
@@ -42,25 +47,40 @@
               >Darien Library
               <span class="resume-right"><em>Darien, CT</em></span>
             </q-item-label>
-            <q-item-label>
-              Assistant Director
-              <span class="resume-right">2017 - 2018</span>
-            </q-item-label>
-            <q-item-label>
-              Assistant Director for Innovation and User Experience
-              <span class="resume-right">2008 - 2017</span>
-            </q-item-label>
-            <q-item-label>
-              Head of Technology and Digital Initiatives
-              <span class="resume-right">2007 - 2008</span>
-            </q-item-label>
+
+            <div class="resume-job-titles">
+              <q-item-label class="row">
+                <div class="col-9">
+                  Assistant Director
+                </div>
+                <div class="col-3">
+                  <span class="resume-right">2017 - 2018</span>
+                </div>
+              </q-item-label>
+              <q-item-label class="row">
+                <div class="col-9">
+                  Assistant Director for Innovation and User Experience
+                </div>
+                <div class="col-3">
+                  <span class="resume-right">2008 - 2017</span>
+                </div>
+              </q-item-label>
+              <q-item-label class="row">
+                <div class="col-9">
+                  Head of Technology and Digital Initiatives
+                </div>
+                <div class="col-3">
+                  <span class="resume-right">2007 - 2008</span>
+                </div>
+              </q-item-label>
+            </div>
             <q-item-label class="resume-job-description">
               <q-list dark dense class="resume-duties-list">
                 <q-item>
                   <q-item-section>
                     Re-built the Library’s technology program from the ground
-                    up, forming the the first-ever public library UX department
-                    in the process.
+                    up, forming the the first-ever public library User
+                    Experience department in the process.
                   </q-item-section>
                 </q-item>
                 <q-item>
@@ -71,8 +91,8 @@
                 </q-item>
                 <q-item>
                   <q-item-section>
-                    dplanned and implemented technology for a $28 million
-                    building project.
+                    Designed, planned, and implemented technology for a $28
+                    million library building project.
                   </q-item-section>
                 </q-item>
                 <q-item>
@@ -92,15 +112,25 @@
               >Ann Arbor District Library
               <span class="resume-right"><em>Ann Arbor, MI</em></span>
             </q-item-label>
-            <q-item-label>
-              Systems Administrator &amp; Lead Developer
-              <span class="resume-right">2005 - 2007</span>
-            </q-item-label>
-            <q-item-label>
-              Network Administrator
-              <span class="resume-right">2002 - 2005</span>
-            </q-item-label>
 
+            <div class="resume-job-titles">
+              <q-item-label class="row">
+                <div class="col-9">
+                  Systems Administrator &amp; Lead Developer
+                </div>
+                <div class="col-3">
+                  <span class="resume-right">2005 - 2007</span>
+                </div>
+              </q-item-label>
+              <q-item-label class="row">
+                <div class="col-9">
+                  Network Administrator
+                </div>
+                <div class="col-3">
+                  <span class="resume-right">2002 - 2005</span>
+                </div>
+              </q-item-label>
+            </div>
             <q-item-label class="resume-job-description">
               <q-list dark dense class="resume-duties-list">
                 <q-item>
@@ -126,15 +156,24 @@
               >Lotus Engineering
               <span class="resume-right"><em>Ann Arbor, MI</em></span>
             </q-item-label>
-            <q-item-label>
-              Manager of Information Technology
-              <span class="resume-right">2001 - 2002</span>
-            </q-item-label>
-            <q-item-label>
-              Network Technician
-              <span class="resume-right">1999 - 2001</span>
-            </q-item-label>
-
+            <div class="resume-job-titles">
+              <q-item-label class="row">
+                <div class="col-9">
+                  Manager of Information Technology
+                </div>
+                <div class="col-3">
+                  <span class="resume-right">2001 - 2002</span>
+                </div>
+              </q-item-label>
+              <q-item-label class="row">
+                <div class="col-9">
+                  Network Technician
+                </div>
+                <div class="col-3">
+                  <span class="resume-right">1999 - 2001</span>
+                </div>
+              </q-item-label>
+            </div>
             <q-item-label class="resume-job-description">
               <q-list dark dense class="resume-duties-list">
                 <q-item>
@@ -163,6 +202,10 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+.resume-job-titles {
+  line-height: 10px;
+}
+
 .resume-job-description {
   margin-top: 20px;
 }

@@ -1,0 +1,1 @@
+I began my career as a systems administrator. I moved into application development because in my bones, I like to make things. My background gives me a well-rounded understanding of infrastructure, information architecture, and devops ecosystems that make modern app development successful.

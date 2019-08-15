@@ -8,7 +8,7 @@
 
     <div class="row justify-around">
       <div class="col-11">
-        <md-viewer src="assets/markdown/newdarienlibrary.md" />
+        <md-viewer src="statics/markdown/newdarienlibrary.md" />
       </div>
     </div>
   </q-page>

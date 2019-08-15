@@ -1,0 +1,11 @@
+I am a New England transplant. I Left Connecticut in 2018 after marrying a Kentucky girl and now I live with her in Lexington. I've been told that happens a lot.
+
+I was formerly the Assistant Director for Innovation and User Experience at the [Darien Library](https://darienlibrary.org) in Connecticut. Prior to that, I was the System Administrator and Lead Developer for the [Ann Arbor District Library](https://aadl.org) (AADL) in Michigan. Before working in libraries, I was the IT manager for the North American office of the British car company, [Lotus Engineering](https://www.lotuscars.com/engineering/). Following my heart to Kentucky to live with my wife was the best decision I ever made -- I'm now doing freelance and consulting work.
+
+In 2006, I was named a Library Journal “Mover and Shaker,” and won my first programming award: first prize in Talis’ “Mashing-up the Library” competition. In 2009 I received the [LITA/Brett Butler Entrepreneurship Award](http://www.ala.org/lita/awards/butler) for my work on the open source SOPAC Application Suite. At Darien Library, I formed the first-ever public library User Experience department in order to completely redefine how customer service and interaction is handled and delivered to staff and users. My work has recieved ::router-link:to:/resume:numerous awards:: over the years, and I have deeply enjoyed crafting tools and experiences for library users and staff alike.
+
+If you want to know what my philosophy on Libraries and and Librarians is, take a peek at a manifesto I wrote with two other amazing librarians (one of whom I later married). ::router-link:to:/darien-statements:The Darien Statements:: still embodies the values I have tried to live by in my professional life. I have spoken nationally and internationally about my work, always evangelizing the prioritization of user experience and compassionate leadership.
+
+My familiar is a dachshund named Hazel. She's the best. I come from a family of dachshund owners. I'm not sure what that means, except that when we get together, you really have to watch where you step.
+
+I am still acclimating to the Kentucky way of life, but as a boy from Maine, I could really get used to these winters.

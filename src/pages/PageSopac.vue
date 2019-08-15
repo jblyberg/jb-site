@@ -8,7 +8,7 @@
 
     <div class="row justify-around">
       <div class="col-11">
-        <md-viewer src="assets/markdown/sopac.md" />
+        <md-viewer src="statics/markdown/sopac.md" />
       </div>
     </div>
   </q-page>

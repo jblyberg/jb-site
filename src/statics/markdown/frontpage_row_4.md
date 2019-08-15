@@ -1,0 +1,1 @@
+I have 18 years of experience working in public libraries. Much of that time was spent as a library administrator and technology manager. I am very familiar with the non-profit world and how libraries work. I have consulted with dozens of libraries and spoken nationally and internationally about technology and user experience in libraries.

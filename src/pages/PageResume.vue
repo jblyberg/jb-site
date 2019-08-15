@@ -6,19 +6,21 @@
       </div>
     </div>
 
-    <resume-experience />
-    <q-separator color="accent" spaced inset />
-    <resume-education />
-    <q-separator color="accent" spaced inset />
-    <resume-service />
-    <q-separator color="accent" spaced inset />
-    <resume-awards />
-    <q-separator color="accent" spaced inset />
-    <resume-memberships />
-    <q-separator color="accent" spaced inset />
-    <resume-projects />
-    <q-separator color="accent" spaced inset />
-    <resume-skills />
+    <div class="resume">
+      <resume-experience />
+      <q-separator color="accent" spaced inset />
+      <resume-education />
+      <q-separator color="accent" spaced inset />
+      <resume-service />
+      <q-separator color="accent" spaced inset />
+      <resume-awards />
+      <q-separator color="accent" spaced inset />
+      <resume-memberships />
+      <!-- <q-separator color="accent" spaced inset />
+    <resume-projects /> -->
+      <q-separator color="accent" spaced inset />
+      <resume-skills />
+    </div>
   </q-page>
 </template>
 
@@ -37,13 +39,19 @@ export default {
       import('components/Resume/Memberships.vue').then(m => m.default),
     'resume-skills': () =>
       import('components/Resume/Skills.vue').then(m => m.default),
-    'resume-projects': () =>
-      import('components/Resume/Projects.vue').then(m => m.default),
+    // 'resume-projects': () =>
+    //   import('components/Resume/Projects.vue').then(m => m.default),
   },
 };
 </script>
 
 <style lang="scss" scoped>
+/deep/ .resume {
+  @media (max-width: 900px) {
+    font-size: 0.9rem;
+  }
+}
+
 /deep/ .resume-section-header {
   margin-top: 5px;
 }
@@ -60,6 +68,9 @@ export default {
   margin-bottom: 15px;
   font-size: 1.2rem;
   color: #e9c896;
+  @media (max-width: 900px) {
+    font-size: 0.9rem;
+  }
 }
 
 /deep/ .resume-right {
