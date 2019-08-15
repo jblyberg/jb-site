@@ -63,14 +63,17 @@
           librarians (one of whom is my wife).
           <router-link to="/darien-statements"
             >The Darien Statements</router-link
-          >
-          still embodies the values I have tried to live by in my professional
+          >still embodies the values I have tried to live by in my professional
           life.
         </p>
 
         <p>
           He is acclimating to the Kentucky way of life. As a boy from Maine, he
           can really get used to these winters.
+        </p>
+
+        <p>
+          <md-viewer src="assets/markdown/about.md" />
         </p>
       </div>
     </div>
@@ -83,6 +86,10 @@ export default {
     openLink: link => {
       window.open(link);
     },
+  },
+  components: {
+    'md-viewer': () =>
+      import('components/Shared/MarkdownViewer.vue').then(m => m.default),
   },
 };
 </script>

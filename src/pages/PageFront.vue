@@ -8,7 +8,7 @@
 
 <script>
 import { date } from 'quasar';
-import frontPageContent from '../assets/frontPage.db.json';
+import frontPageContent from '../assets/json/frontPage.db.json';
 
 export default {
   data() {

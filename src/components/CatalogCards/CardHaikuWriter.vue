@@ -25,7 +25,7 @@
 import Vue from 'vue';
 import VueTypedJs from 'vue-typed-js';
 Vue.use(VueTypedJs);
-import haikus from '../../assets/haiku.db.json';
+import haikus from '../../assets/json/haiku.db.json';
 
 export default {
   data() {
