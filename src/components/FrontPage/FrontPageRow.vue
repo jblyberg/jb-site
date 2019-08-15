@@ -1,11 +1,11 @@
 <template>
   <div :class="classes">
     <div class="col-12 col-md-2 big-icon">
-      <q-icon :name="rowContent.icon" />
+      <q-icon :name="icon" />
     </div>
     <div class="col-9 col-md-7">
       <div class="row">
-        <p>{{ rowContent.blurb }}</p>
+        <md-viewer :src="blurbMarkdown" />
       </div>
     </div>
   </div>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  props: ['rowContent'],
+  props: ['reversed', 'blurbMarkdown', 'icon'],
   computed: {
     classes() {
       return 'row justify-around front-page-section-row' + this.reverse();
@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     reverse() {
-      if (this.rowContent.reverse === true) {
+      if (this.reversed === 'true') {
         return ' reverse';
       }
       return '';

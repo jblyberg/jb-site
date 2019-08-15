@@ -1,29 +1,28 @@
 <template>
   <q-page>
-    <div v-for="content in rowContent" :key="content.key">
-      <front-page-row :rowContent="content" />
-    </div>
+    <front-page-row
+      icon="fas fa-hashtag"
+      blurbMarkdown="assets/markdown/frontpage_row_1.md"
+    />
+    <front-page-row
+      reversed="true"
+      icon="fas fa-code"
+      blurbMarkdown="assets/markdown/frontpage_row_2.md"
+    />
+    <front-page-row
+      icon="fas fa-terminal"
+      blurbMarkdown="assets/markdown/frontpage_row_3.md"
+    />
+    <front-page-row
+      reversed="true"
+      icon="fas fa-book-reader"
+      blurbMarkdown="assets/markdown/frontpage_row_4.md"
+    />
   </q-page>
 </template>
 
 <script>
-import { date } from 'quasar';
-import frontPageContent from '../assets/json/frontPage.db.json';
-
 export default {
-  data() {
-    return {
-      rowContent: frontPageContent.rowContent,
-    };
-  },
-  computed: {
-    yearsInLibs() {
-      const dateStarted = new Date(2002, 9, 1);
-      const dateNow = new Date();
-      const yearsInLibs = date.getDateDiff(dateNow, dateStarted, 'years');
-      return yearsInLibs;
-    },
-  },
   components: {
     'front-page-row': () =>
       import('components/FrontPage/FrontPageRow.vue').then(m => m.default),

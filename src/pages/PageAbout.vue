@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div class="row justify-around">
-      <div class="col-6 col-md-4 column items-center">
+      <div class="col-8 col-md-4 column items-center">
         <q-img
           :src="require('assets/headshot.jpg')"
           spinner-color="white"
@@ -36,45 +36,9 @@
       </div>
       <div class="col-11 col-md-7">
         <h3>About Me</h3>
-        <p>
-          John Blyberg was formerly the Assistant Director for Innovation and
-          User Experience at the Darien Library in Connecticut. Prior to that,
-          he was the System Administrator and Lead Developer for the Ann Arbor
-          District Library (AADL) in Michigan. Before working in libraries, John
-          was the IT manager for the North American office of the British car
-          company, Lotus Engineering. He has recently followed his heart to
-          Kentucky to live with his wife and is now doing freelance and
-          consulting work.
-        </p>
-
-        <p>
-          John was named a Library Journal “Mover and Shaker,” took first prize
-          in Talis’ 2006 “Mashing-up the Library” competition. In 2009 he
-          received the LITA/Brett Butler Entrepreneurship Award for his work on
-          the SOPAC Application Suite. At Darien Library, John formed the
-          first-ever public library User Experience department to completely
-          redefine how customer service and interaction is handled and delivered
-          to staff and users.
-        </p>
-
-        <p>
-          If you want to know what my philosophy on Libraries and and Librarians
-          is, take a peek at a manifesto I wrote with two other amazing
-          librarians (one of whom is my wife).
-          <router-link to="/darien-statements"
-            >The Darien Statements</router-link
-          >still embodies the values I have tried to live by in my professional
-          life.
-        </p>
-
-        <p>
-          He is acclimating to the Kentucky way of life. As a boy from Maine, he
-          can really get used to these winters.
-        </p>
-
-        <p>
+        <div>
           <md-viewer src="assets/markdown/about.md" />
-        </p>
+        </div>
       </div>
     </div>
   </q-page>
@@ -86,10 +50,6 @@ export default {
     openLink: link => {
       window.open(link);
     },
-  },
-  components: {
-    'md-viewer': () =>
-      import('components/Shared/MarkdownViewer.vue').then(m => m.default),
   },
 };
 </script>

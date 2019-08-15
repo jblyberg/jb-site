@@ -1,0 +1,1 @@
+I have been coding for the web since 1999. A lot has changed in that time and I've always been excited to learn new technologies as they emerge. I am a full-stack developer who enjoys working on all levels of an application.

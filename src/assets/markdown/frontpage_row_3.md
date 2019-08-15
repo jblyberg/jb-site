@@ -1,0 +1,1 @@
+I began my career as a systems administrator, picking up programming skills to create applications that made the jobs of my colleages easier. I have a well-rounded understanding of infrastructure, information architecture, and the devops ecosystem that make modern app development successful.

@@ -1,5 +1,5 @@
-// import Vue from 'vue';
+import Vue from 'vue';
 
-// import DefaultPageContainer from '../components/DefaultLayout/DefaultPageContainer.vue';
+import MarkdownViewer from '../components/Shared/MarkdownViewer.vue';
 
-// Vue.component('default-page-container', DefaultPageContainer);
+Vue.component('md-viewer', MarkdownViewer);
