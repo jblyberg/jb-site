@@ -1,3 +1,5 @@
+/*jshint -W024 */
+
 const routes = [
   {
     path: '/',
