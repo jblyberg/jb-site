@@ -37,14 +37,15 @@
         dark
         v-model="callnum"
         label="Call Number"
+        filled
+        type="textarea"
         color="accent"
-        class="text-white"
       />
 
       <q-input
         dark
-        label="Card Text"
         v-model="cardtext"
+        label="Card Text"
         filled
         type="textarea"
         color="accent"
