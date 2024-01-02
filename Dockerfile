@@ -1,8 +1,12 @@
 # docker build -t registry.home.blyberg.net/jb-site -t registry.home.blyberg.net/jb-site:1.0 .
+
+# On M1/2
+# docker buildx build --platform linux/amd64 --output type=docker -t registry.home.blyberg.net/jb-site -t registry.home.blyberg.net/jb-site:1.0 .
+
 # docker push registry.home.blyberg.net/jb-site; docker push registry.home.blyberg.net/jb-site:1.0
 
 # develop stage
-FROM node:12 as develop-stage
+FROM node:16 as develop-stage
 WORKDIR /app
 COPY package*.json ./
 RUN yarn global add @quasar/cli
